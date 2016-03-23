@@ -1,7 +1,7 @@
 package sagan;
 
 import javax.sql.DataSource;
-import java.net.URI;
+
 
 import org.springframework.cloud.Cloud;
 import org.springframework.cloud.CloudFactory;
@@ -32,10 +32,8 @@ class StandaloneDatabaseConfig extends DatabaseConfig {
     public DataSource dataSource() {
         org.apache.tomcat.jdbc.pool.DataSource dataSource = new org.apache.tomcat.jdbc.pool.DataSource();
 		
-		URI dbUri = new URI("postgres://edajunppnshgkg:GnOCuBy8dmtUipKoHsDXRbqgSk@ec2-107-22-248-209.compute-1.amazonaws.com:5432/dultlbcd1g1de");
-
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://ec2-107-22-248-209.compute-1.amazonaws.com:5432" + dbUri.getPath());
+		dataSource.setDriverClassName("org.postgresql.Driver");
+        dataSource.setUrl("jdbc:postgresql://ec2-107-22-248-209.compute-1.amazonaws.com:5432/dultlbcd1g1de");
         dataSource.setUsername("edajunppnshgkg");
         dataSource.setPassword("GnOCuBy8dmtUipKoHsDXRbqgSk");
         dataSource.setValidationQuery("SELECT 1");
