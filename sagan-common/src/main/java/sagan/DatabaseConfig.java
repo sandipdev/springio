@@ -30,19 +30,21 @@ class StandaloneDatabaseConfig extends DatabaseConfig {
 
     @Bean
     public DataSource dataSource() {
-        org.apache.tomcat.jdbc.pool.DataSource dataSource = new org.apache.tomcat.jdbc.pool.DataSource();
+        //org.apache.tomcat.jdbc.pool.DataSource dataSource = new org.apache.tomcat.jdbc.pool.DataSource();
 		
 		//dataSource.setDriverClassName("org.postgresql.Driver");
         //dataSource.setUrl("jdbc:postgresql://ec2-107-22-248-209.compute-1.amazonaws.com:5432/dultlbcd1g1de");
 		//dataSource.setUrl("jdbc:postgres://edajunppnshgkg:GnOCuBy8dmtUipKoHsDXRbqgSk@ec2-107-22-248-209.compute-1.amazonaws.com:5432/dultlbcd1g1de");
-		dataSource.setUrl("jdbc:postgresql://ec2-107-22-248-209.compute-1.amazonaws.com:5432/dultlbcd1g1de");
-        dataSource.setUsername("edajunppnshgkg");
-        dataSource.setPassword("GnOCuBy8dmtUipKoHsDXRbqgSk");
+		
+		org.apache.tomcat.dbcp.dbcp.BasicDataSource basicDataSource = new org.apache.tomcat.dbcp.dbcp.BasicDataSource();
+		basicDataSource.setUrl("jdbc:postgresql://ec2-107-22-248-209.compute-1.amazonaws.com:5432/dultlbcd1g1de");
+        basicDataSource.setUsername("edajunppnshgkg");
+        basicDataSource.setPassword("GnOCuBy8dmtUipKoHsDXRbqgSk");
         //dataSource.setValidationQuery("SELECT 1");
 
-        configureDataSource(dataSource);
+        //configureDataSource(dataSource);
 
-        return dataSource;
+        return basicDataSource;
     }
 }
 
