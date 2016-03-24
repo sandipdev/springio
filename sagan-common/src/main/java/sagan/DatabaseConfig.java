@@ -36,7 +36,7 @@ class StandaloneDatabaseConfig extends DatabaseConfig {
         //dataSource.setUrl("jdbc:postgresql://ec2-107-22-248-209.compute-1.amazonaws.com:5432/dultlbcd1g1de");
 		//dataSource.setUrl("jdbc:postgres://edajunppnshgkg:GnOCuBy8dmtUipKoHsDXRbqgSk@ec2-107-22-248-209.compute-1.amazonaws.com:5432/dultlbcd1g1de");
 		
-		org.apache.tomcat.dbcp.dbcp.BasicDataSource basicDataSource = new org.apache.tomcat.dbcp.dbcp.BasicDataSource();
+		org.apache.commons.dbcp.BasicDataSource basicDataSource = new org.apache.commons.dbcp.BasicDataSource();
 		basicDataSource.setUrl("jdbc:postgresql://ec2-107-22-248-209.compute-1.amazonaws.com:5432/dultlbcd1g1de");
         basicDataSource.setUsername("edajunppnshgkg");
         basicDataSource.setPassword("GnOCuBy8dmtUipKoHsDXRbqgSk");
