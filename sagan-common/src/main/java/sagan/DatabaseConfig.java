@@ -33,10 +33,10 @@ class StandaloneDatabaseConfig extends DatabaseConfig {
         org.apache.tomcat.jdbc.pool.DataSource dataSource = new org.apache.tomcat.jdbc.pool.DataSource();
 		
 		dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://ec2-107-22-248-209.compute-1.amazonaws.com:5432/dultlbcd1g1de");
+        dataSource.setUrl("jdbc:postgresql://ec2-107-22-248-209.compute-1.amazonaws.com:5432/dultlbcd1g1de?sslmode=require&user=edajunppnshgkg&password=GnOCuBy8dmtUipKoHsDXRbqgSk");
 
-        dataSource.setUsername("edajunppnshgkg");
-        dataSource.setPassword("GnOCuBy8dmtUipKoHsDXRbqgSk");
+        //dataSource.setUsername("edajunppnshgkg");
+        //dataSource.setPassword("GnOCuBy8dmtUipKoHsDXRbqgSk");
 		dataSource.setTestOnBorrow(true);
         dataSource.setTestWhileIdle(true);
         dataSource.setTestOnReturn(true);
